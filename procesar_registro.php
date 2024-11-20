@@ -1,9 +1,9 @@
 <?php
-include('conexion.php'); // Incluye la conexión
+include('conexion.php'); 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST["username"];
-    $password = password_hash($_POST["password"], PASSWORD_DEFAULT); // Encripta la contraseña
+    $password = password_hash($_POST["password"], PASSWORD_DEFAULT); 
 
     $sql = "INSERT INTO usuarios (username, password) VALUES (?, ?)";
     $stmt = $conn->prepare($sql);
